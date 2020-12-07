@@ -5,11 +5,9 @@ import org.springframework.stereotype.Service;
 import th.ac.kmitl.project.model.Reservation;
 import th.ac.kmitl.project.repositories.ReservationRepo;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.chrono.ThaiBuddhistDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
