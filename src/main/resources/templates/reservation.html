@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/main_layout}"
+      xmlns:th="https://www.thymeleaf.org">
+
+<div layout:fragment="content" class="content">
+    <h2>Reservation</h2>
+    <div>
+        <h1 class="text-center">Reservation</h1>
+        <form action="#" th:action="@{/reservation}" method="post">
+            <div class="form-row">
+                <div class="col-md-4 offset-md-2">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="Name" id="name" required>
+                </div>
+                <div class="col-md-3 offset-md-1">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" class="form-control" placeholder="Date" id="date" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-4 offset-md-2">
+                    <label for="tel">Phone number</label>
+                    <input type="text" name="tel" class="form-control" placeholder="Tel" id="tel" required>
+                </div>
+                <div class="col-md-3 offset-md-1">
+                    <label for="time">Time</label>
+                    <select id="time" name="time" class="form-control" required="">
+                        <option value="103000">10:30</option>
+                        <option value="120000">12:00</option>
+                        <option value="133000">13:30</option>
+                        <option value="150000">15:00</option>
+                        <option value="163000">16:30</option>
+                        <option value="180000">18:00</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-4 offset-md-2">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="col-md-3 offset-md-1">
+                    <label for="seat">Seat</label>
+                    <input type="text" name="seat" class="form-control" placeholder="How many seat?" id="seat" required>
+                </div>
+            </div>
+
+            <div class="form-row" th:if="${success}">
+                <div class="col-md-6 offset-md-3">
+                    <div class="alert alert-success" role="alert">
+                        <div class="text-center" th:text="${success}"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row" th:if="${error}">
+                <div class="col-md-6 offset-md-3">
+                    <div class="alert alert-warning" role="alert">
+                        <div class="text-center" th:text="${error}"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-2 offset-md-5">
+                    <button type="submit" class="btn btn-outline-success btn-lg btn-block">Reserve</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+</html>
+
+
+

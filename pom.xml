@@ -11,8 +11,8 @@
 	<groupId>th.ac.kmitl</groupId>
 	<artifactId>project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>atm</name>
-	<description>Banking service website</description>
+	<name>sabai</name>
+	<description>Reservation service website</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -67,8 +67,6 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>

@@ -4,24 +4,70 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 public class Reservation {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final int ReservationID;
-    private final int Seat;
-    private final int CustomerID;
-    private final Time ReservationTime;
-    private final Date ReservationDate;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int ReservationID;
 
-    public Reservation(int ReservationID, int Seat, int CustomerID, Date ReservationDate, Time ReservationTime) {
+    private int Seat;
+    private String ReservationTime = new SimpleDateFormat("HHmmss").format(new Date());
+    private String ReservationDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+    private String CustomerEmail;
+    private String CustomerName;
+    private String CustomerTel;
+
+
+    public  Reservation(){
+
+    }
+
+    public Reservation(int ReservationID,
+                       int Seat,
+                       String ReservationDate,
+                       String ReservationTime,
+                       String CustomerName,
+                       String CustomerEmail,
+                       String CustomerTel) {
         this.ReservationID = ReservationID;
         this.Seat = Seat;
-        this.CustomerID = CustomerID;
         this.ReservationDate = ReservationDate;
         this.ReservationTime = ReservationTime;
+        this.CustomerName = CustomerName;
+        this.CustomerEmail = CustomerEmail;
+        this.CustomerTel = CustomerTel;
+    }
+
+    public void setCustomerName(String customerName) {
+        CustomerName = customerName;
+    }
+
+    public void setCustomerTel(String customerTel) {
+        CustomerTel = customerTel;
+    }
+
+    public void setReservationID(int reservationID) {
+        this.ReservationID = reservationID;
+    }
+
+    public void setSeat(int seat) {
+        this.Seat = seat;
+    }
+
+    public void setCustomerEmail(String customerEmail) {
+        this.CustomerEmail = customerEmail;
+    }
+
+    public void setReservationTime(String reservationTime) {
+        this.ReservationTime = reservationTime;
+    }
+
+    public void setReservationDate(String reservationDate) {
+        this.ReservationDate = reservationDate;
     }
 
     public int getReservationID() {
@@ -32,15 +78,23 @@ public class Reservation {
         return Seat;
     }
 
-    public int getCustomerID() {
-        return CustomerID;
+    public String getCustomerEmail() {
+        return CustomerEmail;
     }
 
-    public Time getReservationTime() {
+    public String getReservationTime() {
         return ReservationTime;
     }
 
-    public Date getReservationDate() {
+    public String getReservationDate() {
         return ReservationDate;
+    }
+
+    public String getCustomerTel() {
+        return CustomerTel;
+    }
+
+    public String getCustomerName() {
+        return CustomerName;
     }
 }

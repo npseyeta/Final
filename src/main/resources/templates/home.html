@@ -3,10 +3,49 @@
       layout:decorate="~{fragments/main_layout}"
       xmlns:th="https://www.thymeleaf.org">
 
-    <div layout:fragment="content" class="container">
-        <div class="jumbotron">
-            <hl class="display-4 my-font" th:text="${greeting}">Hello, RD!</hl>
-            <p><a th:href="@{/customer}">Customer Registration</a></p>
+    <div layout:fragment="content" class="content">
+        <h2>Home</h2>
+        <p>Welcome to our site!</p>
+
+        <h2>RECOMMENDED MENU</h2>
+        <div class="container">
+            <h3>Recommend Menu</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <img alt="" class="img-fluid center-block rounded" id="image1" src="/css/spaghetti.jpg" />
+                    <p class="text-center">Spaghetti with fermanented pork sausage and chilies garlic</p></div>
+                <div class="col-md-4"><img alt="" class="img-fluid center-block rounded" id="image2" src="/css/burger.jpg" />
+                    <p class="text-center"> Pork with curry sauce burger</p></div>
+                <div class="col-md-4"><img alt="" class="img-fluid center-block rounded" id="image3" src="/css/salmon.jpg" />
+                    <p class="text-center">Salmon croissant</p></div>
+            </div>
+        </div>
+
+
+        <h2>Contact us</h2>
+        <div>
+            <h1>Sabai restaurant</h1>
+            <dl class="row">
+                <dt class="col-sm-3">About us</dt>
+                <dd class="col-sm-9">
+                    <p>ร้านอาหารสบายเป็นร้านประเภทCafé • Eatery เปิดให้บริการตั้งแต่ 08.00-20.30น. ทางร้านมีความตั้งใจที่จะพาลูกค้าไปผจญภัยกับอาหารหลากหลายประเภททั้งของคาว ของหวาน และเครื่องดื่มนั่นเอง</p>
+                    <p>สำหรับเมนูอาหารของนั้นจะมาในสไตล์ไทย-ฟิวชั่นโดยจะแบ่งออกเป็นหมวดหมู่ให้ลูกค้าได้เลือกทานง่ายขึ้น ทั้ง All day breakfast, กินเล่น, ยำรสแซ่บ, สลัด, สเต๊ก, พิซซ่า ,เบอร์เกอร์ และอาหารไทย รวมถึงเมนูของหวาน และเครื่องดื่มแบบหลากหลายซึ่งในช่วงกลางวันจะเป็นช่วงที่มีเมนูอาหารให้เลือกทานมากกว่าช่วงอื่นๆ โดยจะมีเมนูทั้งแบบอาหารจานเดียว และแบบแชริ่งแบ่งกันทานกับเพื่อนๆ โดยทางร้านจะมีการแบ่งเวลาอาหารแต่ละช่วงเป็น 2 เวลา ดังนี้
+                    • Cafe (08.00-11.30 น.) เมนูมื้อเช้าแบบเบาๆ พร้อมด้วยเครื่องดื่มหลากหลายทั้ง Coffee และ Non-coffee
+                    • Eatery (11.30-20.30 น.) จัดเต็มเมนูอาหารคาวหวานสไตล์ไทย-ฟิวชั่น จะเป็นช่วงที่มีเมนูอาหารให้เลือกเยอะมากที่สุด</p>
+                </dd>
+
+                <dt class="col-sm-3">Address</dt>
+                <dd class="col-sm-9">
+                    <p>Somewhere....</p>
+                    <p>more detail......</p>
+                </dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">sabai@software.com</dd>
+
+                <dt class="col-sm-3 text-truncate">Tel</dt>
+                <dd class="col-sm-9">099-999-9999</dd>
+            </dl>
         </div>
     </div>
 </html>

@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import th.ac.kmitl.project.model.Reservation;
 import th.ac.kmitl.project.service.ReservationService;
 
+
 @Controller
-@RequestMapping("/reservation")
+@RequestMapping
 public class ReservationController {
 
     private ReservationService reservationService;
@@ -16,15 +17,31 @@ public class ReservationController {
         this.reservationService = reservationService;
     }
 
-    @GetMapping
-    public String getReservationPage() {
+    @GetMapping("/reservation")
+    public String getReservePage(){
         return "reservation";
     }
 
-    @PostMapping
-    public String reservation(@RequestBody @ModelAttribute Reservation reservation) {
-        reservationService.createReservation(reservation);
-        return "home";
+    @PostMapping("/reservation")
+    public String reservation(Reservation reservation,
+                              @RequestParam String email,
+                              @RequestParam String name,
+                              @RequestParam String tel,
+                              @RequestParam String time,
+                              @RequestParam String date,
+                              Model model){
+        reservation.setCustomerEmail(email);
+        reservation.setCustomerName(name);
+        reservation.setCustomerTel(tel);
+        reservation.setReservationTime(time);
+        reservation.setReservationDate(date);
+        String messeage = reservationService.createReservation(reservation);
+        if (messeage == null){
+            model.addAttribute("success", "Your Reservation was successfully place!");
+        }else{
+            model.addAttribute("error", messeage);
+        }
+        return "reservation";
     }
 }
 
